@@ -21,6 +21,21 @@ switch (process.env.NODE_ENV) {
       },
     );
     break;
+    case 'staging':
+    database = new Sequelize(
+      connection.staging.database,
+      connection.staging.username,
+      connection.staging.password, {
+        host: connection.staging.host,
+        dialect: connection.staging.dialect,
+        pool: {
+          max: 5,
+          min: 0,
+          idle: 10000,
+        },
+      },
+    );
+    break;
   default:
     database = new Sequelize(
       connection.development.database,
