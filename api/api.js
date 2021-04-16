@@ -15,7 +15,7 @@ const environment = process.env.NODE_ENV;
 
 const app = express();
 const server = http.Server(app);
-const mappedOpenRoutes = mapRoutes(config.publicRoutes, 'api/controllers/');
+const mappedRoutes = mapRoutes(config.Routes, 'api/controllers/');
 const DB = dbService(environment, config.migrate).start();
 
 
@@ -35,7 +35,7 @@ app.use(bodyParser.json());
 
 
 // fill routes for express application
-app.all('/*', mappedOpenRoutes);
+app.all('/*', mappedRoutes);
 
 server.listen(config.port, () => {
   if (environment !== 'production' &&
