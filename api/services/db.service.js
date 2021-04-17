@@ -93,9 +93,6 @@ const dbService = (environment, migrate) => {
       case 'staging':
         await startStage();
         break;
-      case 'testing':
-        await startTest();
-        break;
       case 'production':
         await startProd();
         break;

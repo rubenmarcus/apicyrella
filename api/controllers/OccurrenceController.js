@@ -128,7 +128,7 @@ const OccurrenceController = () => {
     } catch (err) {
       console.error(err);
 
-      return res.status(500).json({ msg: 'Internal server error' });
+      return res.status(500).json({ msg: err.message  });
     }
 
   }

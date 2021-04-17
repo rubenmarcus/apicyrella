@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "cross-env NODE_ENV=development node ./api/api.js",
-    "nodemon": "nodemon --exec npm run dev",
+    "staging": "cross-env NODE_ENV=staging node ./api/api.js",
+    "nodemon:dev": "nodemon --exec npm run dev",
+    "nodemon:staging": "nodemon --exec npm run staging",
     "production": "cross-env NODE_ENV=production node ./api/api.js",
     "start": "NODE_ENV=production node ./api/api.js"
   },

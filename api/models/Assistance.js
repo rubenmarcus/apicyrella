@@ -8,34 +8,53 @@ const tableName = 'assistance';
 
 const assistance = db.define('Assistance', {
   actualstart: {
-    type: Sequelize.DATEONLY ,
+    type: Sequelize.DATEONLY,
+    required: true,
+    allowNull: false,
+    notEmpty: true
   },
   actualend: {
     type: Sequelize.DATEONLY,
+    required: true,
+    allowNull: false,
+    notEmpty: true
   },
   pjo_tipodeatividade: {
     type: Sequelize.STRING,
+    required: true,
+    allowNull: false,
+    notEmpty: true
   },
   subject:{
     type: Sequelize.STRING,
+    required: true,
+    allowNull: false,
+    notEmpty: true
   },
   id: {
     type: Sequelize.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   },
   pjo_empreendimentoid:  {
     type: Sequelize.INTEGER,
-    unique: true
+    required: true,
+    allowNull: false,
+    notEmpty: true
   },
   pjo_blocoid:  {
     type: Sequelize.INTEGER,
-    unique: true
+    required: true,
+    allowNull: false,
+    notEmpty: true
+
   },
   pjo_unidadeid:  {
     type: Sequelize.INTEGER,
-    unique: true
+    required: true,
+    allowNull: false,
+    notEmpty: true
   },
 
 }, { tableName });

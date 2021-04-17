@@ -93,16 +93,16 @@ const AssistanceController = () => {
     } catch (err) {
       console.error(err);
 
-      return res.status(500).json({ msg: 'Internal server error' });
+      return res.status(500).json({ msg: 'Internal server error' - err.msg });
     }
   };
 
 
 
-  const addAssistance = async (req, res) => {
 
-    try {
-      const Assistencia = await Assistance.create({
+  const addAssistance = async (req, res) => {
+       
+    const values = {
         actualstart: req.body.actualstart,
         actualend: req.body.actualend,
         pjo_tipodeatividade: req.body.pjo_tipodeatividade,
@@ -110,17 +110,25 @@ const AssistanceController = () => {
         pjo_empreendimentoid: req.body.pjo_empreendimentoid,
         pjo_blocoid: req.body.pjo_blocoid,
         pjo_unidadeid: req.body.pjo_unidadeid,
-      });
+      }
+  
+
+    try {
+      
+        const Assistencia = await Assistance.create(values);
+
+        return res.status(200).json({ Assistencia });
+    
+         
 
       if(!Assistencia) {
         return res.status(400).json({ msg: 'Bad Request: Assistência não encontrada.' });
       }
 
-      return res.status(200).json({ Assistencia });
     } catch (err) {
       console.error(err);
-
-      return res.status(500).json({ msg: 'Internal server error' });
+       
+      return res.status(500).json({ msg: err.message  });
     }
 
   }

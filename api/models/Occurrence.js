@@ -18,12 +18,18 @@ const Occurence = db.define('Occurrence', {
       },
       pjo_unidade:  {
         type: Sequelize.STRING,
+        allowNull: false,
+        notEmpty: true
       },
   description: {
     type: Sequelize.STRING,
+    allowNull: false,
+    notEmpty: true
   },
   pjo_bandeira: {
     type: Sequelize.STRING,
+    allowNull: false,
+    notEmpty: true
   },
   id: {
     type: Sequelize.INTEGER,
@@ -33,6 +39,8 @@ const Occurence = db.define('Occurrence', {
   },
   ticketnumber:  {
     type: Sequelize.INTEGER,
+    allowNull: false,
+    notEmpty: true,
     unique: true,
     defaultValue: function() {
       return randomId()
@@ -40,9 +48,13 @@ const Occurence = db.define('Occurrence', {
   },
   pjo_empreendimentoid:  {
     type: Sequelize.INTEGER,
+    allowNull: false,
+    notEmpty: true
   },
   pjo_clientedaunidade:  {
     type: Sequelize.STRING,
+    allowNull: false,
+    notEmpty: true
   },
 
 }, { tableName });

@@ -7,9 +7,9 @@ const development = {
   };
   
   const staging  = {
-    database: 'heroku_7bcceb62a555e5a',
-    username: 'bd695e9974656f',
-    password: '0d9fa16a',
+    database: 'heroku_99af5c910be67bf',
+    username: 'b1fee8743c2a1c',
+    password: '38580e63',
     host: 'us-cdbr-east-03.cleardb.com',
     dialect:  'mysql',
   };
