@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "520a71d3-7e78-412f-8e7c-3bbf81865623",
-		"name": "Cyrella API",
+		"name": "Cyrella API Produção",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -48,6 +48,32 @@
 					"response": []
 				},
 				{
+					"name": "Ocorrência por filtro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/ocorrencias?id=3",
+							"protocol": "https",
+							"host": [
+								"api-cyrella-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"ocorrencias"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Ocorrencia by ID",
 					"request": {
 						"auth": {
@@ -63,7 +89,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/ocorrencias/9",
+							"raw": "http://localhost:8080/ocorrencias/44",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -72,7 +98,7 @@
 							],
 							"path": [
 								"ocorrencias",
-								"9"
+								"44"
 							]
 						},
 						"description": "Ocorrencia by ID"
@@ -96,10 +122,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \"pjo_bloco\": 1111,\r\n   \"pjo_unidade\":\"Granja Viana\",\r\n  \"description\":\"Abc de ef\",\r\n  \"pjo_bandeira\":\"ELO\",\r\n  \"pjo_empreendimentoid\": \"333\",\r\n  \"pjo_clientedaunidade\":\"Ruben Paschoarelli\"\r\n}"
+							"raw": "  {\r\n    \"ticketnumber\": 18,\r\n    \"pjo_bandeira\": \"Elo\",\r\n    \"description\": \"morte de inquilino\",\r\n    \"pjo_empreendimentoid\": 18,\r\n    \"pjo_unidade\": \"Pontal\",\r\n    \"pjo_clientedaunidade\": \"Lívia Franqueira Anhaia\",\r\n    \"pjo_bloco\": 18\r\n  }"
 						},
 						"url": {
-							"raw": "http://localhost:8080/ocorrencias/editar/9",
+							"raw": "http://localhost:8080/ocorrencias/editar/3",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -109,7 +135,7 @@
 							"path": [
 								"ocorrencias",
 								"editar",
-								"9"
+								"3"
 							]
 						}
 					},
@@ -117,14 +143,11 @@
 				},
 				{
 					"name": "Apagar Ocorrência por ID",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "noauth"
 						},
-						"method": "GET",
+						"method": "DELETE",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -138,7 +161,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/ocorrencias/9",
+							"raw": "http://localhost:8080/ocorrencias/remover/104",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -147,14 +170,49 @@
 							],
 							"path": [
 								"ocorrencias",
-								"9"
+								"remover",
+								"104"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Ocorrência",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"ticketnumber\": 35,\r\n    \"pjo_bandeira\": \"Visa\",\r\n    \"description\": \"protesto em cartório\",\r\n    \"pjo_empreendimentoid\": 35,\r\n    \"pjo_unidade\": \"Jaçanã\",\r\n    \"pjo_clientedaunidade\": \"Domingos Feijó Homem\",\r\n    \"pjo_bloco\": 35\r\n  }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/ocorrencias/adicionar",
+							"protocol": "https",
+							"host": [
+								"api-cyrella-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"ocorrencias",
+								"adicionar"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Assistências",
@@ -197,6 +255,32 @@
 					"response": []
 				},
 				{
+					"name": "Assistência por Filtro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/assistencias?id=3",
+							"protocol": "https",
+							"host": [
+								"api-cyrella-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"assistencias"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Assistência por ID",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -219,7 +303,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/assistencias/64",
+							"raw": "http://localhost:8080/assistencias/2",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -228,7 +312,7 @@
 							],
 							"path": [
 								"assistencias",
-								"64"
+								"2"
 							]
 						}
 					},
@@ -251,7 +335,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \"actualstart\": \"1995-01-02T00:00:00.000Z\",\r\n        \"actualend\": \"1993-01-02T00:00:00.000Z\",\r\n        \"pjo_tipodeatividade\": \"visita de imóvel no Morumbi\",\r\n        \"subject\": \"visita\",\r\n        \"pjo_empreendimentoid\": 12314,\r\n        \"pjo_blocoid\": 333,\r\n        \"pjo_unidadeid\": \"331\"}"
+							"raw": "  {\r\n    \"actualstart\": \"2020-11-23 03:56:51\",\r\n    \"actualend\": \"2020-06-03 05:49:20\",\r\n    \"pjo_tipodeatividade\": \"Benthall\",\r\n    \"subject\": \"etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla\",\r\n    \"pjo_empreendimentoid\": \"amet lobortis sapien sapien non mi integer ac neque duis bibendum\",\r\n    \"pjo_blocoid\": 10,\r\n    \"pjo_unidadeid\": 10\r\n  }"
 						},
 						"url": {
 							"raw": "http://localhost:8080/assistencias/adicionar",
@@ -286,10 +370,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{  \"actualstart\": \"1995-01-02T00:00:00.000Z\",\r\n        \"actualend\": \"1993-01-02T00:00:00.000Z\",\r\n        \"pjo_tipodeatividade\": \"visita de imóvel no Jardins\",\r\n        \"subject\": \"visita\",\r\n        \"pjo_empreendimentoid\": 12314,\r\n        \"pjo_blocoid\": 333,\r\n        \"pjo_unidadeid\": \"331\"}"
+							"raw": "{  \"actualstart\": \"1995-01-02T00:00:00.000Z\",\r\n        \"actualend\": \"1993-01-02T00:00:00.000Z\",\r\n        \"pjo_tipodeatividade\": \"visita de imóvel em Pirituba\",\r\n        \"subject\": \"visita\",\r\n        \"pjo_empreendimentoid\": 12314,\r\n        \"pjo_blocoid\": 333,\r\n        \"pjo_unidadeid\": \"331\"}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/assistencias/editar/84",
+							"raw": "http://localhost:8080/assistencias/editar/3",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -299,7 +383,7 @@
 							"path": [
 								"assistencias",
 								"editar",
-								"84"
+								"3"
 							]
 						}
 					},
@@ -325,7 +409,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8080/assistencias/deletar/84",
+							"raw": "http://localhost:8080/assistencias/deletar/5",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -335,15 +419,13 @@
 							"path": [
 								"assistencias",
 								"deletar",
-								"84"
+								"5"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }

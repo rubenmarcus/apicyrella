@@ -48,6 +48,32 @@
 					"response": []
 				},
 				{
+					"name": "Ocorrência por filtro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-cyrella-fiap.herokuapp.com/ocorrencias?id=3",
+							"protocol": "https",
+							"host": [
+								"api-cyrella-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"ocorrencias"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Ocorrencia by ID",
 					"request": {
 						"auth": {
@@ -223,6 +249,32 @@
 							],
 							"path": [
 								"assistencias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assistência por Filtro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api-cyrella-fiap.herokuapp.com/assistencias?id=3",
+							"protocol": "https",
+							"host": [
+								"api-cyrella-fiap",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"assistencias"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
 							]
 						}
 					},

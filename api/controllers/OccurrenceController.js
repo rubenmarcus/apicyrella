@@ -5,6 +5,7 @@ const OccurrenceController = () => {
   const ApiCall = async (Ocorrencias, res) => {
                 try {
                     await Ocorrencias;
+              
                     
                     if(!Ocorrencias) {
                       return res.status(400).json({ msg: 'Não encontramos nenhuma ocorrência com esse ID.' });
@@ -19,13 +20,28 @@ const OccurrenceController = () => {
 
 
   const getAll = async (req, res) => {
-    const occurrences = await Occurrence.findAll();
+
+    let occurrences;
+  
+
+    
+    const filter = req.query;
+
+    
+
+    occurrences =  await Occurrence.findAll({
+      where:
+       filter
+      })
+
+
     return ApiCall(occurrences, res);
   };
 
 
   const getbyId = async (req, res) => {
     const { id } = req.params;
+
    
     const occurrencebyId = await Occurrence.findOne({
       where: {
@@ -33,7 +49,7 @@ const OccurrenceController = () => {
       },
     });
 
-    return ApiCall(occurrencebyId, res);
+    return ApiCall(occurrencebyId, res );
 
   }
 

@@ -4,6 +4,18 @@ const AssistanceController = () => {
 
   const getAll = async (req, res) => {
     try {
+
+      const filter = req.query;
+
+      if(filter) {
+       const filteredValue =  await Assistance.findAll({
+          where:
+           filter
+          })
+
+          return res.status(200).json({ "Assistencias" : filteredValue });
+      }
+
       const assistances = await Assistance.findAll();
 
       return res.status(200).json({ "Assistencias" : assistances });
