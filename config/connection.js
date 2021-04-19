@@ -2,15 +2,15 @@ const development = {
     database: 'cyrella',
     username: 'root',
     password: 'root',
-    host: 'mysql://localhost:3306',
+    host: 'localhost',
     dialect:  'mysql',
   };
   
   const staging  = {
-    database: 'heroku_99af5c910be67bf',
-    username: 'b1fee8743c2a1c',
-    password: '38580e63',
-    host: 'us-cdbr-east-03.cleardb.com',
+    database: 'y4u9l4omglanv78v',
+    username: 'u130kmua9v7h5zy6',
+    password: 't8oog83ojp70r6yu',
+    host: 'vkh7buea61avxg07.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     dialect:  'mysql',
   };
   
