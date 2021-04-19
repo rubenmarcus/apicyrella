@@ -15,7 +15,7 @@ const HomeController = () => {
           return res.status(400).json({ msg: 'Não encontramos nenhuma dado' });
         }
 
-        return res.status(200).json({  "Assitencias" : assist, "Ocorrencias": occ});
+        return res.status(200).json({  "Assistencias" : assist, "Ocorrencias": occ});
     } catch(err) {
         console.log(err);
         return res.status(500).json({ msg: 'Internal server error' });
