@@ -17,6 +17,7 @@
   }
   
   const Routes = {
+    'GET /': 'HomeController.getAll',
     ...occurrenceRoutes,
     ...assistanceRoutes
     };

@@ -10,7 +10,7 @@ const OccurrenceController = () => {
                       return res.status(400).json({ msg: 'Não encontramos nenhuma ocorrência com esse ID.' });
                     }
 
-                    return res.status(200).json({ Ocorrencias });
+                    return res.status(200).json({ "Ocorrencias": Ocorrencias });
                 } catch(err) {
                     console.log(err);
                     return res.status(500).json({ msg: 'Internal server error' });
@@ -69,13 +69,6 @@ const OccurrenceController = () => {
   const update = async (req, res) => {
     const { id } = req.params;
 
-    const occurrencebyId = await Occurrence.findOne({
-      where: {
-        id,
-      },
-    });
-
-
 
     try {
       const Occorrencia = await Occurrence.findOne({
@@ -97,7 +90,7 @@ const OccurrenceController = () => {
         pjo_clientedaunidade: req.body.pjo_clientedaunidade,
       })
 
-      return res.status(200).json({ updatedOccurrence });
+      return res.status(200).json({ "Ocorrencia": updatedOccurrence });
     } catch (err) {
       // better save it to log file
       console.error(err);

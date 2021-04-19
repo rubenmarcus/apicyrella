@@ -6,7 +6,7 @@ const AssistanceController = () => {
     try {
       const assistances = await Assistance.findAll();
 
-      return res.status(200).json({ assistances });
+      return res.status(200).json({ "Assitencias" : assistances });
     } catch (err) {
       console.log(err);
       return res.status(500).json({ msg: 'Internal server error' });
@@ -28,7 +28,7 @@ const AssistanceController = () => {
         return res.status(400).json({ msg: 'Não encontramos nenhuma assistência com esse ID.' });
       }
 
-      return res.status(200).json({ assistancebyId });
+      return res.status(200).json({ "Assitencia" : assistancebyId });
     } catch (err) {
       console.error(err);
 
@@ -117,13 +117,15 @@ const AssistanceController = () => {
       
         const Assistencia = await Assistance.create(values);
 
+        if(!Assistencia) {
+          return res.status(400).json({ msg: 'Bad Request: Assistência não encontrada.' });
+        }
+
         return res.status(200).json({ Assistencia });
     
          
 
-      if(!Assistencia) {
-        return res.status(400).json({ msg: 'Bad Request: Assistência não encontrada.' });
-      }
+    
 
     } catch (err) {
       console.error(err);
