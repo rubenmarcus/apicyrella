@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "520a71d3-7e78-412f-8e7c-3bbf81865623",
-		"name": "Cyrella API",
+		"name": "Cyrella API Produção",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -99,7 +99,7 @@
 							"raw": "  {\r\n    \"ticketnumber\": 18,\r\n    \"pjo_bandeira\": \"Elo\",\r\n    \"description\": \"morte de inquilino\",\r\n    \"pjo_empreendimentoid\": 18,\r\n    \"pjo_unidade\": \"Pontal\",\r\n    \"pjo_clientedaunidade\": \"Lívia Franqueira Anhaia\",\r\n    \"pjo_bloco\": 18\r\n  }"
 						},
 						"url": {
-							"raw": "https://api-cyrella-fiap.herokuapp.com/ocorrencias/editar/34",
+							"raw": "https://api-cyrella-fiap.herokuapp.com/ocorrencias/editar/3",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -109,7 +109,7 @@
 							"path": [
 								"ocorrencias",
 								"editar",
-								"34"
+								"3"
 							]
 						}
 					},
@@ -135,7 +135,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-cyrella-fiap.herokuapp.com/ocorrencias/remover/14",
+							"raw": "https://api-cyrella-fiap.herokuapp.com/ocorrencias/remover/104",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -145,7 +145,7 @@
 							"path": [
 								"ocorrencias",
 								"remover",
-								"14"
+								"104"
 							]
 						}
 					},
@@ -186,8 +186,7 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "Assistências",
@@ -252,7 +251,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-cyrella-fiap.herokuapp.com/assistencias/64",
+							"raw": "https://api-cyrella-fiap.herokuapp.com/assistencias/2",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -261,7 +260,7 @@
 							],
 							"path": [
 								"assistencias",
-								"64"
+								"2"
 							]
 						}
 					},
@@ -322,7 +321,7 @@
 							"raw": "{  \"actualstart\": \"1995-01-02T00:00:00.000Z\",\r\n        \"actualend\": \"1993-01-02T00:00:00.000Z\",\r\n        \"pjo_tipodeatividade\": \"visita de imóvel em Pirituba\",\r\n        \"subject\": \"visita\",\r\n        \"pjo_empreendimentoid\": 12314,\r\n        \"pjo_blocoid\": 333,\r\n        \"pjo_unidadeid\": \"331\"}"
 						},
 						"url": {
-							"raw": "https://api-cyrella-fiap.herokuapp.com/assistencias/editar/14",
+							"raw": "https://api-cyrella-fiap.herokuapp.com/assistencias/editar/3",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -332,7 +331,7 @@
 							"path": [
 								"assistencias",
 								"editar",
-								"14"
+								"3"
 							]
 						}
 					},
@@ -358,7 +357,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "https://api-cyrella-fiap.herokuapp.com/assistencias/deletar/84",
+							"raw": "https://api-cyrella-fiap.herokuapp.com/assistencias/deletar/5",
 							"protocol": "https",
 							"host": [
 								"api-cyrella-fiap",
@@ -368,15 +367,13 @@
 							"path": [
 								"assistencias",
 								"deletar",
-								"84"
+								"5"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
